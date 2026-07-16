@@ -1,0 +1,26 @@
+# MyGrandStand Brand Notes
+
+- Brand: MyGrandStand
+- Tagline: My Sports. My Way.
+- Brand promise: Every Fan Deserves Their Own Grandstand.
+- Supporting line: A new generation of sports companion apps designed around the fan—not the sport.
+- Product family:
+  - Football — Available Today
+  - American Football — In Development
+  - Basketball — On Our Roadmap
+  - Cricket — On Our Roadmap
+  - Baseball — On Our Roadmap
+- Visual principles:
+  - deep navy
+  - emerald accent
+  - white/slate typography
+  - generous whitespace
+  - restrained motion
+  - fan-first language
+- Domain architecture:
+  - mygrandstand.cc
+  - football.mygrandstand.cc
+  - americanfootball.mygrandstand.cc
+  - basketball.mygrandstand.cc
+  - cricket.mygrandstand.cc
+  - baseball.mygrandstand.cc
