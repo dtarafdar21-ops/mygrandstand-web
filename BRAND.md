@@ -3,7 +3,8 @@
 - Brand: MyGrandStand
 - Tagline: My Sports. My Way.
 - Brand promise: Every Fan Deserves Their Own Grandstand.
-- Supporting line: A new generation of sports companion apps designed around the fan—not the sport.
+- Supporting line: A new generation of sports companion apps designed around the fan.
+- Umbrella lockup: The approved umbrella brand artwork must be used as the hero lockup asset. It must not be rebuilt with CSS or recreated as text.
 - Product family:
   - Football — Available Today
   - American Football — In Development

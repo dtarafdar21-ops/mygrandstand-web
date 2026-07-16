@@ -3,8 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "MyGrandStand | My Sports. My Way.",
-  description:
-    "A new generation of sports companion apps designed around the fan—not the sport.",
+  description: "A new generation of sports companion apps designed around the fan.",
 };
 
 export default function RootLayout({
