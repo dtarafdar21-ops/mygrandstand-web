@@ -1,0 +1,40 @@
+import Link from "next/link";
+
+const footerLinkClass =
+  "transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07111f]";
+
+export function SiteFooter() {
+  return (
+    <footer className="mx-auto w-full max-w-6xl px-6 pb-10 pt-4 sm:px-8 sm:pb-12 lg:px-10">
+      <div className="border-t border-slate-800 pt-6 text-center text-sm text-slate-400">
+        <p className="font-semibold tracking-[0.18em] text-slate-300">
+          MYGRANDSTAND PTE. LTD.
+        </p>
+
+        <a
+          href="mailto:support@mygrandstand.cc"
+          className={`mt-3 block ${footerLinkClass}`}
+        >
+          support@mygrandstand.cc
+        </a>
+
+        <nav
+          aria-label="Footer"
+          className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
+        >
+          <Link href="/privacy" className={footerLinkClass}>
+            Privacy Policy
+          </Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/terms" className={footerLinkClass}>
+            Terms of Use
+          </Link>
+        </nav>
+
+        <p className="mt-4 font-medium text-slate-300">
+          © 2026 MyGrandStand Pte. Ltd. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}

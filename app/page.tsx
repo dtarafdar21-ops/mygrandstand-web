@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLockup } from "../components/BrandLockup";
+import { SiteFooter } from "../components/SiteFooter";
 
 export default function Home() {
   return (
@@ -25,12 +26,14 @@ export default function Home() {
               src="/icons/football.png"
               alt=""
               aria-hidden="true"
-              className="h-5 w-5 shrink-0 object-contain"
+              className="h-6 w-6 shrink-0 object-contain"
             />
             Open MyGrandStand Football
           </Link>
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }
