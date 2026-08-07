@@ -22,6 +22,14 @@ export function SiteFooter() {
           aria-label="Footer"
           className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
         >
+          <Link href="/" className={footerLinkClass}>
+            Home
+          </Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/about" className={footerLinkClass}>
+            About Us
+          </Link>
+          <span aria-hidden="true">•</span>
           <Link href="/privacy" className={footerLinkClass}>
             Privacy Policy
           </Link>

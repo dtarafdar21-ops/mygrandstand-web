@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SiteFooter } from "../../components/SiteFooter";
 
 const linkClass =
@@ -12,11 +11,7 @@ export default function PrivacyPolicy() {
   return (
     <main className="bg-[var(--background)] text-[var(--foreground)]">
       <section className="mx-auto w-full max-w-3xl px-6 py-12 sm:px-8 sm:py-16">
-        <Link href="/" className={linkClass}>
-          MyGrandStand
-        </Link>
-
-        <header className="mt-8 border-b border-slate-800 pb-8">
+        <header className="border-b border-slate-800 pb-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300">
             MYGRANDSTAND PTE. LTD.
           </p>
@@ -24,8 +19,6 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p className="mt-4 text-base leading-8 text-slate-300">
-            MyGrandStand
-            <br />
             Last Updated: 23 July 2026
           </p>
         </header>
