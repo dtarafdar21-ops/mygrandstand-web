@@ -19,7 +19,8 @@ test("homepage CTA opens Why MyGrandStand and footer uses company legal wording"
   assert.match(footer, /MYGRANDSTAND PTE\. LTD\./);
   assert.match(footer, /mailto:support@mygrandstand\.cc/);
   assert.match(footer, /support@mygrandstand\.cc/);
-  assert.match(footer, /href="\/"[\s\S]*Home[\s\S]*href="\/why-mygrandstand"[\s\S]*Why MyGrandStand[\s\S]*href="\/about"[\s\S]*About Us[\s\S]*href="\/privacy"[\s\S]*Privacy Policy[\s\S]*href="\/terms"[\s\S]*Terms of Use/);
+  assert.match(footer, /href="\/"[\s\S]*Home[\s\S]*href="\/about"[\s\S]*About Us[\s\S]*href="\/privacy"[\s\S]*Privacy Policy[\s\S]*href="\/terms"[\s\S]*Terms of Use/);
+  assert.doesNotMatch(footer, /href="\/why-mygrandstand"/);
   assert.match(footer, /© 2026 MyGrandStand Pte\. Ltd\. All rights reserved\./);
   assert.doesNotMatch(footer, /Contact Us/);
   assert.doesNotMatch(footer, /mygrandstandapp@gmail\.com/);

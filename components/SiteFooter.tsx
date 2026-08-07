@@ -26,10 +26,6 @@ export function SiteFooter() {
             Home
           </Link>
           <span aria-hidden="true">•</span>
-          <Link href="/why-mygrandstand" className={footerLinkClass}>
-            Why MyGrandStand
-          </Link>
-          <span aria-hidden="true">•</span>
           <Link href="/about" className={footerLinkClass}>
             About Us
           </Link>
