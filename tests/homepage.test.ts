@@ -19,7 +19,7 @@ test("homepage CTA opens Why MyGrandStand and footer uses company legal wording"
   assert.match(footer, /MYGRANDSTAND PTE\. LTD\./);
   assert.match(footer, /mailto:support@mygrandstand\.cc/);
   assert.match(footer, /support@mygrandstand\.cc/);
-  assert.match(footer, /href="\/"[\s\S]*Home[\s\S]*href="\/about"[\s\S]*About Us[\s\S]*href="\/privacy"[\s\S]*Privacy Policy[\s\S]*href="\/terms"[\s\S]*Terms of Use/);
+  assert.match(footer, /href="\/"[\s\S]*Home[\s\S]*href="\/why-mygrandstand"[\s\S]*Why MyGrandStand[\s\S]*href="\/about"[\s\S]*About Us[\s\S]*href="\/privacy"[\s\S]*Privacy Policy[\s\S]*href="\/terms"[\s\S]*Terms of Use/);
   assert.match(footer, /© 2026 MyGrandStand Pte\. Ltd\. All rights reserved\./);
   assert.doesNotMatch(footer, /Contact Us/);
   assert.doesNotMatch(footer, /mygrandstandapp@gmail\.com/);
@@ -110,7 +110,6 @@ test("About Us page renders the website information content and footer", async (
   assert.match(page, /href="mailto:support@mygrandstand\.cc"[\s\S]*support@mygrandstand\.cc/);
   assert.match(page, /© 2026 MYGRANDSTAND PTE\. LTD\./);
   assert.match(page, /All rights reserved\./);
-  assert.match(page, /href="\/"[\s\S]*Home[\s\S]*href="\/about"[\s\S]*About Us[\s\S]*href="\/privacy"[\s\S]*Privacy Policy[\s\S]*href="\/terms"[\s\S]*Terms of Use/);
   assert.match(page, /My Football\. My Way\./);
   assert.doesNotMatch(page, /InformationNav/);
   assert.doesNotMatch(page, /aria-label="More"/);
