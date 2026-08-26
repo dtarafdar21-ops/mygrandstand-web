@@ -1,7 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
-import { getSafeCorporateReturnPath } from "../../lib/legalNavigation";
+import { Suspense } from "react";
+import LegalDocument from "../../components/LegalDocument";
 
 /**
  * Keep the corporate site's legal entry point on Footivo's canonical policy.
@@ -9,10 +7,5 @@ import { getSafeCorporateReturnPath } from "../../lib/legalNavigation";
  * drift in wording, date, operator identity or contact details.
  */
 export default function PrivacyPolicy() {
-  useEffect(() => {
-    const returnTo = getSafeCorporateReturnPath(new URLSearchParams(window.location.search).get("returnTo"));
-    window.location.replace(`https://football.mygrandstand.cc/privacy?corporate=1&returnTo=${encodeURIComponent(returnTo)}`);
-  }, []);
-
-  return null;
+  return <Suspense fallback={null}><LegalDocument kind="privacy" /></Suspense>;
 }

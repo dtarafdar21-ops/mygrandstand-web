@@ -1,5 +1,3 @@
-const FOOTIVO_ORIGIN = "https://football.mygrandstand.cc";
-
 export function getSafeCorporateReturnPath(value: string | null | undefined) {
   if (!value) return "/";
 
@@ -15,5 +13,5 @@ export function getSafeCorporateReturnPath(value: string | null | undefined) {
 
 export function getCorporateLegalHref(documentPath: "privacy" | "terms", returnTo: string | null | undefined) {
   const safePath = getSafeCorporateReturnPath(returnTo);
-  return `${FOOTIVO_ORIGIN}/${documentPath}?corporate=1&returnTo=${encodeURIComponent(safePath)}`;
+  return `/${documentPath}?returnTo=${encodeURIComponent(safePath)}`;
 }

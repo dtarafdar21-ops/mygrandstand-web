@@ -19,8 +19,9 @@ test("homepage CTA opens Why MyGrandStand and footer uses company legal wording"
   assert.match(footer, /MYGRANDSTAND PTE\. LTD\./);
   assert.match(footer, /mailto:support@mygrandstand\.cc/);
   assert.match(footer, /support@mygrandstand\.cc/);
-  assert.match(footer, /getCorporateLegalHref\("privacy", returnTo\)/);
-  assert.match(footer, /getCorporateLegalHref\("terms", returnTo\)/);
+  assert.match(footer, /href=\{getCorporateLegalHref\("privacy", returnTo\)\}/);
+  assert.match(footer, /href=\{getCorporateLegalHref\("terms", returnTo\)\}/);
+  assert.doesNotMatch(footer, /football\.mygrandstand\.cc/);
   assert.doesNotMatch(footer, /href="\/why-mygrandstand"/);
   assert.match(footer, /© 2026 MyGrandStand Pte\. Ltd\. All rights reserved\./);
   assert.doesNotMatch(footer, /Contact Us/);
@@ -32,11 +33,14 @@ test("legal routes identify the operator and support contact consistently", asyn
   const privacy = await readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8");
   const terms = await readFile(new URL("../app/terms/page.tsx", import.meta.url), "utf8");
 
-  assert.match(privacy, /getSafeCorporateReturnPath/);
-  assert.match(privacy, /corporate=1&returnTo=/);
+  assert.match(privacy, /<LegalDocument kind="privacy" \/>/);
   assert.match(privacy, /canonical policy/);
-  assert.match(terms, /getSafeCorporateReturnPath/);
-  assert.match(terms, /corporate=1&returnTo=/);
+  assert.match(terms, /<LegalDocument kind="terms" \/>/);
+  const legalDocument = await readFile(new URL("../components/LegalDocument.tsx", import.meta.url), "utf8");
+  assert.match(legalDocument, /border-b-2 border-l-2 border-current/);
+  assert.match(legalDocument, /getSafeCorporateReturnPath/);
+  assert.match(legalDocument, /href=\{returnTo\}/);
+  assert.doesNotMatch(legalDocument, /football\.mygrandstand\.cc/);
   assert.match(terms, /canonical Terms/);
 });
 

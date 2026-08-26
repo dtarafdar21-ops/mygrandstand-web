@@ -10,6 +10,6 @@ test("corporate legal navigation preserves safe internal origins", () => {
   assert.equal(getSafeCorporateReturnPath("/not-a-corporate-page"), "/");
   assert.equal(
     getCorporateLegalHref("privacy", "/why-mygrandstand"),
-    "https://football.mygrandstand.cc/privacy?corporate=1&returnTo=%2Fwhy-mygrandstand"
+    "/privacy?returnTo=%2Fwhy-mygrandstand"
   );
 });
