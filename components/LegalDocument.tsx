@@ -28,7 +28,7 @@ export default function LegalDocument({ kind }: { kind: LegalDocumentKind }) {
     <main className="bg-[var(--background)] text-[var(--foreground)]">
       <article className="mx-auto flex w-full max-w-3xl flex-col px-6 py-8 sm:px-8 sm:py-12">
         <Link href={returnTo} aria-label="Back to originating corporate page" className="inline-flex min-h-11 w-fit items-center gap-2 text-emerald-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300">
-          <span aria-hidden="true" className="h-2.5 w-2.5 -rotate-45 border-b-2 border-l-2 border-current" />
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current stroke-2"><path d="m15 18-6-6 6-6" /></svg>
           <span>Back</span>
         </Link>
 
@@ -53,9 +53,8 @@ export default function LegalDocument({ kind }: { kind: LegalDocumentKind }) {
                 if (!isPrivacy && section.heading === "Privacy" && blockIndex === 0) {
                   return <p key={`${section.heading}-${blockIndex}`} className={paragraphClass}>Use of Footivo is also governed by the <Link href={privacyHref} className={linkClass}>Footivo Privacy Policy</Link>, which explains how information is collected, used and protected in connection with the Services.</p>;
                 }
-                const email = isPrivacy && section.heading === "Contact Us" ? PRIVACY_POLICY_CONTACT_EMAIL : !isPrivacy && section.heading === "Contact Us" ? null : null;
-                if (email && block.text.includes(email)) {
-                  return <p key={`${section.heading}-${blockIndex}`} className={paragraphClass}>{block.text.split(email)[0]}<a href={`mailto:${email}`} className={linkClass}>{email}</a></p>;
+                if (isPrivacy && section.heading === "Contact Us" && block.text === "For privacy questions, requests or concerns, please contact:") {
+                  return <p key={`${section.heading}-${blockIndex}`} className={paragraphClass}>{block.text}<br />Email: <a href={`mailto:${PRIVACY_POLICY_CONTACT_EMAIL}`} className={linkClass}>{PRIVACY_POLICY_CONTACT_EMAIL}</a></p>;
                 }
                 if (!isPrivacy && section.heading === "Contact Us") {
                   return <p key={`${section.heading}-${blockIndex}`} className={paragraphClass}>{block.text.split("\n").map((line, index) => <span key={line}>{index > 0 && <br />}{line.includes(TERMS_LEGAL_EMAIL) ? <>{line.split(TERMS_LEGAL_EMAIL)[0]}<a href={`mailto:${TERMS_LEGAL_EMAIL}`} className={linkClass}>{TERMS_LEGAL_EMAIL}</a></> : line.includes(TERMS_PRIVACY_EMAIL) ? <>{line.split(TERMS_PRIVACY_EMAIL)[0]}<a href={`mailto:${TERMS_PRIVACY_EMAIL}`} className={linkClass}>{TERMS_PRIVACY_EMAIL}</a></> : line}</span>)}</p>;

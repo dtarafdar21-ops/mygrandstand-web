@@ -37,10 +37,13 @@ test("legal routes identify the operator and support contact consistently", asyn
   assert.match(privacy, /canonical policy/);
   assert.match(terms, /<LegalDocument kind="terms" \/>/);
   const legalDocument = await readFile(new URL("../components/LegalDocument.tsx", import.meta.url), "utf8");
-  assert.match(legalDocument, /border-b-2 border-l-2 border-current/);
+  assert.match(legalDocument, /d=\"m15 18-6-6 6-6\"/);
   assert.match(legalDocument, /getSafeCorporateReturnPath/);
   assert.match(legalDocument, /href=\{returnTo\}/);
   assert.doesNotMatch(legalDocument, /football\.mygrandstand\.cc/);
+  const privacyContent = await readFile(new URL("../lib/privacyPolicy.ts", import.meta.url), "utf8");
+  assert.match(privacyContent, /privacy@mygrandstand\.cc/);
+  assert.match(legalDocument, /Email: <a href=\{`mailto:\$\{PRIVACY_POLICY_CONTACT_EMAIL\}`\}/);
   assert.match(terms, /canonical Terms/);
 });
 
