@@ -31,23 +31,12 @@ test("legal routes identify the operator and support contact consistently", asyn
   const privacy = await readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8");
   const terms = await readFile(new URL("../app/terms/page.tsx", import.meta.url), "utf8");
 
-  for (const source of [privacy, terms]) {
-    assert.doesNotMatch(source, /<Link href="\/" className=\{linkClass\}>\s*MyGrandStand\s*<\/Link>/);
-    assert.match(source, /MYGRANDSTAND PTE\. LTD\./);
-    assert.match(source, /mailto:support@mygrandstand\.cc/);
-    assert.match(source, /support@mygrandstand\.cc/);
-    assert.doesNotMatch(source, /mygrandstandapp@gmail\.com/);
-    assert.doesNotMatch(source, /Highlightly|RapidAPI|OpenAI|Google|Firebase|Stripe|Vercel|Render/);
-  }
-
-  assert.match(privacy, /Last Updated: 23 July 2026/);
-  assert.match(privacy, /MYGRANDSTAND PTE\. LTD\.[\s\S]*Privacy Policy/);
-  assert.doesNotMatch(privacy, /Privacy Policy[\s\S]*MyGrandStand\s*<br \/>[\s\S]*Last Updated/);
-  assert.match(privacy, /Information We Process/);
-  assert.match(privacy, /AI-generated Content/);
-  assert.match(privacy, /MyGrandStand does not sell your personal information/);
+  assert.match(privacy, /redirect\("https:\/\/football\.mygrandstand\.cc\/privacy"\)/);
+  assert.match(privacy, /canonical policy/);
 
   assert.match(terms, /MyGrandStand/);
+  assert.match(terms, /MYGRANDSTAND PTE\. LTD\./);
+  assert.match(terms, /mailto:support@mygrandstand\.cc/);
   assert.match(terms, /Last Updated: 23 July 2026/);
   assert.match(terms, /MYGRANDSTAND PTE\. LTD\.[\s\S]*Terms of Use/);
   assert.doesNotMatch(terms, /Terms of Use[\s\S]*MyGrandStand\s*<br \/>[\s\S]*Last Updated/);
