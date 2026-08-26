@@ -176,7 +176,7 @@ export default function WhyMyGrandStandPage() {
         </div>
       </article>
 
-      <SiteFooter />
+      <SiteFooter returnTo="/why-mygrandstand" />
     </main>
   );
 }

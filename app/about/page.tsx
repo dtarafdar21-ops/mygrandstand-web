@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLockup } from "../../components/BrandLockup";
+import { getCorporateLegalHref } from "../../lib/legalNavigation";
 
 const legalLinkClass =
   "transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07111f]";
@@ -73,11 +74,11 @@ export default function AboutPage() {
                 About Us
               </Link>
               <span aria-hidden="true">•</span>
-              <Link href="/privacy" className={legalLinkClass}>
+              <Link href={getCorporateLegalHref("privacy", "/about")} className={legalLinkClass}>
                 Privacy Policy
               </Link>
               <span aria-hidden="true">•</span>
-              <Link href="/terms" className={legalLinkClass}>
+              <Link href={getCorporateLegalHref("terms", "/about")} className={legalLinkClass}>
                 Terms of Use
               </Link>
             </nav>

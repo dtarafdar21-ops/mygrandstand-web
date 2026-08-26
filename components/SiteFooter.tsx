@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { getCorporateLegalHref } from "../lib/legalNavigation";
 
 const footerLinkClass =
   "transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07111f]";
 
-export function SiteFooter() {
+export function SiteFooter({ returnTo = "/" }: { returnTo?: string }) {
   return (
     <footer className="mx-auto w-full max-w-6xl px-6 pb-10 pt-4 sm:px-8 sm:pb-12 lg:px-10">
       <div className="border-t border-slate-800 pt-6 text-center text-sm text-slate-400">
@@ -30,11 +31,11 @@ export function SiteFooter() {
             About Us
           </Link>
           <span aria-hidden="true">•</span>
-          <Link href="/privacy" className={footerLinkClass}>
+          <Link href={getCorporateLegalHref("privacy", returnTo)} className={footerLinkClass}>
             Privacy Policy
           </Link>
           <span aria-hidden="true">•</span>
-          <Link href="/terms" className={footerLinkClass}>
+          <Link href={getCorporateLegalHref("terms", returnTo)} className={footerLinkClass}>
             Terms of Use
           </Link>
         </nav>

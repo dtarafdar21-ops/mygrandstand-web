@@ -14,12 +14,13 @@ test("homepage CTA opens Why MyGrandStand and footer uses company legal wording"
   assert.match(page, /className="h-6 w-6 shrink-0 object-contain"/);
   assert.doesNotMatch(page, /<InformationNav \/>/);
   assert.doesNotMatch(page, /aria-label="More"/);
-  assert.match(page, /<SiteFooter \/>/);
+  assert.match(page, /<SiteFooter returnTo="\/" \/>/);
 
   assert.match(footer, /MYGRANDSTAND PTE\. LTD\./);
   assert.match(footer, /mailto:support@mygrandstand\.cc/);
   assert.match(footer, /support@mygrandstand\.cc/);
-  assert.match(footer, /href="\/"[\s\S]*Home[\s\S]*href="\/about"[\s\S]*About Us[\s\S]*href="\/privacy"[\s\S]*Privacy Policy[\s\S]*href="\/terms"[\s\S]*Terms of Use/);
+  assert.match(footer, /getCorporateLegalHref\("privacy", returnTo\)/);
+  assert.match(footer, /getCorporateLegalHref\("terms", returnTo\)/);
   assert.doesNotMatch(footer, /href="\/why-mygrandstand"/);
   assert.match(footer, /© 2026 MyGrandStand Pte\. Ltd\. All rights reserved\./);
   assert.doesNotMatch(footer, /Contact Us/);
@@ -31,9 +32,11 @@ test("legal routes identify the operator and support contact consistently", asyn
   const privacy = await readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8");
   const terms = await readFile(new URL("../app/terms/page.tsx", import.meta.url), "utf8");
 
-  assert.match(privacy, /redirect\("https:\/\/football\.mygrandstand\.cc\/privacy"\)/);
+  assert.match(privacy, /getSafeCorporateReturnPath/);
+  assert.match(privacy, /corporate=1&returnTo=/);
   assert.match(privacy, /canonical policy/);
-  assert.match(terms, /redirect\("https:\/\/football\.mygrandstand\.cc\/terms"\)/);
+  assert.match(terms, /getSafeCorporateReturnPath/);
+  assert.match(terms, /corporate=1&returnTo=/);
   assert.match(terms, /canonical Terms/);
 });
 
@@ -72,7 +75,7 @@ test("Why MyGrandStand page follows the approved PDF content updates", async () 
   assert.match(page, /Thank you for being part of the MyGrandStand journey\./);
   assert.match(page, /We hope MyGrandStand becomes your trusted companion for every match, every competition and every football season\./);
   assert.match(page, /Because every fan deserves their own grandstand\./);
-  assert.match(page, /<SiteFooter \/>/);
+  assert.match(page, /<SiteFooter returnTo="\/why-mygrandstand" \/>/);
 });
 
 test("About Us page renders the website information content and footer", async () => {

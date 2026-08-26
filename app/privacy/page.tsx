@@ -1,4 +1,7 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useEffect } from "react";
+import { getSafeCorporateReturnPath } from "../../lib/legalNavigation";
 
 /**
  * Keep the corporate site's legal entry point on Footivo's canonical policy.
@@ -6,5 +9,10 @@ import { redirect } from "next/navigation";
  * drift in wording, date, operator identity or contact details.
  */
 export default function PrivacyPolicy() {
-  redirect("https://football.mygrandstand.cc/privacy");
+  useEffect(() => {
+    const returnTo = getSafeCorporateReturnPath(new URLSearchParams(window.location.search).get("returnTo"));
+    window.location.replace(`https://football.mygrandstand.cc/privacy?corporate=1&returnTo=${encodeURIComponent(returnTo)}`);
+  }, []);
+
+  return null;
 }
