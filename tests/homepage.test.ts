@@ -33,16 +33,8 @@ test("legal routes identify the operator and support contact consistently", asyn
 
   assert.match(privacy, /redirect\("https:\/\/football\.mygrandstand\.cc\/privacy"\)/);
   assert.match(privacy, /canonical policy/);
-
-  assert.match(terms, /MyGrandStand/);
-  assert.match(terms, /MYGRANDSTAND PTE\. LTD\./);
-  assert.match(terms, /mailto:support@mygrandstand\.cc/);
-  assert.match(terms, /Last Updated: 23 July 2026/);
-  assert.match(terms, /MYGRANDSTAND PTE\. LTD\.[\s\S]*Terms of Use/);
-  assert.doesNotMatch(terms, /Terms of Use[\s\S]*MyGrandStand\s*<br \/>[\s\S]*Last Updated/);
-  assert.match(terms, /No Betting or Gambling Advice/);
-  assert.match(terms, /Governing Law/);
-  assert.match(terms, /Thank you for using MyGrandStand/);
+  assert.match(terms, /redirect\("https:\/\/football\.mygrandstand\.cc\/terms"\)/);
+  assert.match(terms, /canonical Terms/);
 });
 
 test("Why MyGrandStand page follows the approved PDF content updates", async () => {
