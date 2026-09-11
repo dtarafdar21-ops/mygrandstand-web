@@ -68,7 +68,8 @@ export default function WhyFootivoPage() {
             <h2 className="text-2xl font-semibold text-white">One simple price</h2>
             <p className="text-2xl font-semibold leading-tight text-emerald-300">US$ 0.99 per year</p>
             <p className="text-base italic leading-7 text-slate-300">Local currency pricing may vary by country or region.</p>
-            <p className="text-base font-semibold leading-7 text-white">Start FREE 1-month trial</p>
+            <p className="text-base italic leading-7 text-slate-300">Includes a 1-month free trial.</p>
+            <p className="text-base italic leading-7 text-slate-300">Your subscription begins only after the free trial ends.</p>
           </section>
 
           <section className="space-y-5">
