@@ -17,8 +17,8 @@ test("homepage CTA opens Why Footivo and footer uses company legal wording", asy
   assert.match(page, /<SiteFooter returnTo="\/" \/>/);
 
   assert.match(footer, /MYGRANDSTAND PTE\. LTD\./);
-  assert.match(footer, /mailto:support@mygrandstand\.cc/);
-  assert.match(footer, /support@mygrandstand\.cc/);
+  assert.match(footer, /mailto:support@footivo\.net/);
+  assert.match(footer, /support@footivo\.net/);
   assert.match(footer, /href=\{getCorporateLegalHref\("privacy", returnTo\)\}/);
   assert.match(footer, /href=\{getCorporateLegalHref\("terms", returnTo\)\}/);
   assert.doesNotMatch(footer, /football\.mygrandstand\.cc/);

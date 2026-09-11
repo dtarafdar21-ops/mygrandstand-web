@@ -13,10 +13,10 @@ export function SiteFooter({ returnTo = "/" }: { returnTo?: string }) {
         </p>
 
         <a
-          href="mailto:support@mygrandstand.cc"
+          href="mailto:support@footivo.net"
           className={`mt-3 block ${footerLinkClass}`}
         >
-          support@mygrandstand.cc
+          support@footivo.net
         </a>
 
         <nav
