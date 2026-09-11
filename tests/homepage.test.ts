@@ -87,24 +87,28 @@ test("legacy product route remains a compatibility redirect page", async () => {
   assert.doesNotMatch(page, /Why MyGrandStand|MyGrandStand Football/);
 });
 
-test("About Us page renders the website information content and footer", async () => {
+test("About Us page renders the current Footivo information with the corporate footer", async () => {
   const page = await readFile(new URL("../app/about/page.tsx", import.meta.url), "utf8");
 
   assert.match(page, /export default function AboutPage/);
   assert.match(page, /About Us/);
   assert.match(page, /Our Story/);
-  assert.match(page, /MyGrandStand began with a simple question\./);
+  assert.match(page, /Footivo began with a simple question\./);
   assert.match(page, /One day, a daughter asked her father:/);
   assert.match(page, /“When is the next World Cup match, and who is playing\?”/);
   assert.match(page, /Our Purpose/);
   assert.match(page, /To build the simplest and most enjoyable football companion—one that respects your time, stays focused on the game and puts football first\./);
   assert.match(page, /Share your thoughts/);
-  assert.match(page, /Have an idea, suggestion or feedback about MyGrandStand\?/);
-  assert.match(page, /We’d love to hear from you as we continue improving the experience for football fans everywhere\./);
-  assert.match(page, /href="mailto:support@mygrandstand\.cc"[\s\S]*support@mygrandstand\.cc/);
-  assert.match(page, /© 2026 MYGRANDSTAND PTE\. LTD\./);
-  assert.match(page, /All rights reserved\./);
-  assert.match(page, /My Football\. My Way\./);
+  assert.match(page, /Have an idea, suggestion or feedback about Footivo\?/);
+  assert.match(page, /We’d love to hear from you as we continue improving the app for football fans everywhere\./);
+  assert.match(page, /href="mailto:hello@footivo\.net"[\s\S]*hello@footivo\.net/);
+  assert.match(page, /<SiteFooter returnTo="\/about" \/>/);
+  assert.doesNotMatch(page, /support@mygrandstand\.cc|MyGrandStand began|My Football\. My Way\./);
   assert.doesNotMatch(page, /InformationNav/);
   assert.doesNotMatch(page, /aria-label="More"/);
+});
+
+test("Why Footivo keeps the approved local-pricing note below trial terms", async () => {
+  const page = await readFile(new URL("../app/why-footivo/page.tsx", import.meta.url), "utf8");
+  assert.match(page, /Subscription begins only after your 30-day free trial ends\.[\s\S]*Local currency pricing may vary by country or region\./);
 });

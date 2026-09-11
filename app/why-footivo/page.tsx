@@ -79,6 +79,7 @@ export default function WhyFootivoPage() {
             <p className="text-2xl font-semibold leading-tight text-emerald-300">US$ 0.99 per year</p>
             <p className="text-base italic leading-7 text-slate-300">Includes a 30-day free trial.</p>
             <p className="text-base italic leading-7 text-slate-300">Subscription begins only after your 30-day free trial ends.</p>
+            <p className="text-base italic leading-7 text-slate-300">Local currency pricing may vary by country or region.</p>
           </section>
 
           <section className="space-y-5">

@@ -1,9 +1,5 @@
-import Link from "next/link";
 import { BrandLockup } from "../../components/BrandLockup";
-import { getCorporateLegalHref } from "../../lib/legalNavigation";
-
-const legalLinkClass =
-  "transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07111f]";
+import { SiteFooter } from "../../components/SiteFooter";
 
 export default function AboutPage() {
   return (
@@ -21,7 +17,7 @@ export default function AboutPage() {
           <section className="space-y-5">
             <h2 className="text-2xl font-semibold text-white">Our Story</h2>
             <p className="text-base leading-7">
-              MyGrandStand began with a simple question.
+              Footivo began with a simple question.
             </p>
             <p className="text-base leading-7">
               One day, a daughter asked her father:
@@ -44,50 +40,21 @@ export default function AboutPage() {
           <section className="space-y-5">
             <h2 className="text-2xl font-semibold text-white">Share your thoughts</h2>
             <p className="text-base leading-7">
-              Have an idea, suggestion or feedback about MyGrandStand?
+              Have an idea, suggestion or feedback about Footivo?
             </p>
             <p className="text-base leading-7">
-              We’d love to hear from you as we continue improving the experience for football fans everywhere.
+              We’d love to hear from you as we continue improving the app for football fans everywhere.
             </p>
             <a
-              href="mailto:support@mygrandstand.cc"
+              href="mailto:hello@footivo.net"
               className="inline-flex text-base font-semibold text-emerald-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07111f]"
             >
-              support@mygrandstand.cc
+              hello@footivo.net
             </a>
           </section>
-
-          <footer className="border-t border-slate-800 pt-8 text-center text-sm text-slate-400">
-            <p className="font-semibold text-slate-200">
-              © 2026 MYGRANDSTAND PTE. LTD.
-            </p>
-            <p className="mt-3">All rights reserved.</p>
-            <nav
-              aria-label="Legal"
-              className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
-            >
-              <Link href="/" className={legalLinkClass}>
-                Home
-              </Link>
-              <span aria-hidden="true">•</span>
-              <Link href="/about" className={legalLinkClass}>
-                About Us
-              </Link>
-              <span aria-hidden="true">•</span>
-              <Link href={getCorporateLegalHref("privacy", "/about")} className={legalLinkClass}>
-                Privacy Policy
-              </Link>
-              <span aria-hidden="true">•</span>
-              <Link href={getCorporateLegalHref("terms", "/about")} className={legalLinkClass}>
-                Terms of Use
-              </Link>
-            </nav>
-            <p className="mt-5 text-lg font-semibold text-emerald-300">
-              My Football. My Way.
-            </p>
-          </footer>
         </div>
       </article>
+      <SiteFooter returnTo="/about" />
     </main>
   );
 }
