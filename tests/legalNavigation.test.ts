@@ -5,11 +5,16 @@ import { getCorporateLegalHref, getSafeCorporateReturnPath } from "../lib/legalN
 
 test("corporate legal navigation preserves safe internal origins", () => {
   assert.equal(getSafeCorporateReturnPath("/about"), "/about");
+  assert.equal(getSafeCorporateReturnPath("/why-footivo"), "/why-footivo");
   assert.equal(getSafeCorporateReturnPath("https://evil.test"), "/");
   assert.equal(getSafeCorporateReturnPath("//evil.test"), "/");
   assert.equal(getSafeCorporateReturnPath("/not-a-corporate-page"), "/");
   assert.equal(
     getCorporateLegalHref("privacy", "/why-mygrandstand"),
     "/privacy?returnTo=%2Fwhy-mygrandstand"
+  );
+  assert.equal(
+    getCorporateLegalHref("terms", "/why-footivo"),
+    "/terms?returnTo=%2Fwhy-footivo"
   );
 });

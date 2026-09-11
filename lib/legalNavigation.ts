@@ -5,7 +5,7 @@ export function getSafeCorporateReturnPath(value: string | null | undefined) {
     const decoded = decodeURIComponent(value);
     if (!decoded.startsWith("/") || decoded.startsWith("//") || decoded.includes("\\")) return "/";
     const pathname = decoded.split("?", 1)[0].split("#", 1)[0];
-    return ["/", "/about", "/why-mygrandstand"].includes(pathname) ? decoded : "/";
+    return ["/", "/about", "/why-mygrandstand", "/why-footivo"].includes(pathname) ? decoded : "/";
   } catch {
     return "/";
   }
