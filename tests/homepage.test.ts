@@ -6,7 +6,7 @@ test("homepage CTA opens Why Footivo and footer uses company legal wording", asy
   const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
   const footer = await readFile(new URL("../components/SiteFooter.tsx", import.meta.url), "utf8");
 
-  assert.match(page, /href="\/why-footivo"/);
+  assert.match(page, /href="\/footivo"/);
   assert.doesNotMatch(page, /href="https:\/\/football\.mygrandstand\.cc"/);
   assert.match(page, /Explore Footivo/);
   assert.doesNotMatch(page, /MyGrandStand Football/);
@@ -17,8 +17,9 @@ test("homepage CTA opens Why Footivo and footer uses company legal wording", asy
   assert.match(page, /<SiteFooter returnTo="\/" \/>/);
 
   assert.match(footer, /MYGRANDSTAND PTE\. LTD\./);
-  assert.match(footer, /mailto:support@footivo\.net/);
-  assert.match(footer, /support@footivo\.net/);
+  assert.match(footer, /href="\/support"/);
+  assert.match(footer, /Support\s*</);
+  assert.doesNotMatch(footer, /support@(?:mygrandstand|footivo)\.net/);
   assert.match(footer, /href=\{getCorporateLegalHref\("privacy", returnTo\)\}/);
   assert.match(footer, /href=\{getCorporateLegalHref\("terms", returnTo\)\}/);
   assert.doesNotMatch(footer, /football\.mygrandstand\.cc/);
@@ -48,7 +49,7 @@ test("legal routes identify the operator and support contact consistently", asyn
 });
 
 test("Why Footivo page follows the approved Explore Footivo content", async () => {
-  const page = await readFile(new URL("../app/why-footivo/page.tsx", import.meta.url), "utf8");
+  const page = await readFile(new URL("../app/footivo/page.tsx", import.meta.url), "utf8");
 
   assert.match(page, /Why Footivo\?/);
   assert.match(page, /Welcome to Footivo/);
@@ -82,13 +83,13 @@ test("Why Footivo page follows the approved Explore Footivo content", async () =
   assert.match(page, /Thank you for exploring Footivo\./);
   assert.match(page, /Footivo exists to help football fans enjoy the game/);
   assert.match(page, /Because every fan deserves their own grandstand\./);
-  assert.match(page, /<SiteFooter returnTo="\/why-footivo" \/>/);
+  assert.match(page, /<SiteFooter returnTo="\/footivo" \/>/);
 });
 
 test("legacy product route remains a compatibility redirect page", async () => {
   const page = await readFile(new URL("../app/why-mygrandstand/page.tsx", import.meta.url), "utf8");
-  assert.match(page, /httpEquiv="refresh" content="0;url=\/why-footivo"/);
-  assert.match(page, /href="\/why-footivo"/);
+  assert.match(page, /httpEquiv="refresh" content="0;url=\/footivo"/);
+  assert.match(page, /href="\/footivo"/);
   assert.doesNotMatch(page, /Why MyGrandStand|MyGrandStand Football/);
 });
 
@@ -114,6 +115,6 @@ test("About Us page renders the current Footivo information with the corporate f
 });
 
 test("Why Footivo keeps the approved pricing copy together", async () => {
-  const page = await readFile(new URL("../app/why-footivo/page.tsx", import.meta.url), "utf8");
+  const page = await readFile(new URL("../app/footivo/page.tsx", import.meta.url), "utf8");
   assert.match(page, /US\$ 0\.99 per year[\s\S]*Local currency pricing may vary by country or region\.[\s\S]*Includes a 1-month free trial\.[\s\S]*Your subscription begins only after the free trial ends\./);
 });

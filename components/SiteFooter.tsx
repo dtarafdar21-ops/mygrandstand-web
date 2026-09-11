@@ -12,13 +12,6 @@ export function SiteFooter({ returnTo = "/" }: { returnTo?: string }) {
           MYGRANDSTAND PTE. LTD.
         </p>
 
-        <a
-          href="mailto:support@footivo.net"
-          className={`mt-3 block ${footerLinkClass}`}
-        >
-          support@footivo.net
-        </a>
-
         <nav
           aria-label="Footer"
           className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
@@ -29,6 +22,10 @@ export function SiteFooter({ returnTo = "/" }: { returnTo?: string }) {
           <span aria-hidden="true">•</span>
           <Link href="/about" className={footerLinkClass}>
             About Us
+          </Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/support" className={footerLinkClass}>
+            Support
           </Link>
           <span aria-hidden="true">•</span>
           <Link href={getCorporateLegalHref("privacy", returnTo)} className={footerLinkClass}>

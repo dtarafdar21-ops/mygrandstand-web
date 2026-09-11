@@ -18,7 +18,7 @@ export default function Home() {
           </p>
 
           <Link
-            href="/why-footivo"
+            href="/footivo"
             className="mt-8 inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full border border-emerald-400/50 bg-emerald-500 px-6 py-3.5 text-base font-semibold text-slate-950 transition-colors duration-200 hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#07111f] sm:min-h-12 sm:px-7 sm:py-4 sm:text-lg"
           >
             Explore Footivo

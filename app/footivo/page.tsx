@@ -86,7 +86,7 @@ export default function WhyFootivoPage() {
           </section>
         </div>
       </article>
-      <SiteFooter returnTo="/why-footivo" />
+      <SiteFooter returnTo="/footivo" />
     </main>
   );
 }
