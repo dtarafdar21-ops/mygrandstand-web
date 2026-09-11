@@ -55,12 +55,12 @@ export default function WhyFootivoPage() {
           </section>
 
           <section className="space-y-5">
-            <h2 className="text-2xl font-semibold uppercase tracking-[0.14em] text-white">Everything Included</h2>
+            <h2 className="text-2xl font-semibold text-white">Our Promise</h2>
             <ul className="space-y-2 text-base leading-7">{includedFeatures.map((feature) => <li key={feature}>{feature}</li>)}</ul>
           </section>
 
           <section className="space-y-5">
-            <h2 className="text-2xl font-semibold uppercase tracking-[0.14em] text-white">Our Commitment</h2>
+            <h2 className="text-2xl font-semibold text-white">Our Commitment</h2>
             <ul className="space-y-2 text-base leading-7">{commitments.map((commitment) => <li key={commitment}>{commitment}</li>)}</ul>
           </section>
 

@@ -53,7 +53,7 @@ test("Why Footivo page follows the approved Explore Footivo content", async () =
   assert.match(page, /Why Footivo\?/);
   assert.match(page, /Welcome to Footivo/);
   assert.match(page, /No Noise\. All Football\./);
-  assert.match(page, /Everything Included/);
+  assert.match(page, /Our Promise/);
   assert.match(page, /Live scores and match updates/);
   assert.match(page, /Fixtures and results/);
   assert.match(page, /League tables and standings/);
@@ -73,7 +73,8 @@ test("Why Footivo page follows the approved Explore Footivo content", async () =
   assert.match(page, /One simple price/);
   assert.match(page, /US\$ 0\.99 per year/);
   assert.match(page, /Local currency pricing may vary by country or region\./);
-  assert.match(page, /Start FREE 1-month trial/);
+  assert.match(page, /Includes a 1-month free trial\./);
+  assert.match(page, /Your subscription begins only after the free trial ends\./);
   assert.match(page, /label="App Store"/);
   assert.match(page, /label="Google Play"/);
   assert.doesNotMatch(page, /apps\.apple\.com|play\.google\.com|href="#"/);
@@ -114,5 +115,5 @@ test("About Us page renders the current Footivo information with the corporate f
 
 test("Why Footivo keeps the approved pricing copy together", async () => {
   const page = await readFile(new URL("../app/why-footivo/page.tsx", import.meta.url), "utf8");
-  assert.match(page, /US\$ 0\.99 per year[\s\S]*Local currency pricing may vary by country or region\.[\s\S]*Start FREE 1-month trial/);
+  assert.match(page, /US\$ 0\.99 per year[\s\S]*Local currency pricing may vary by country or region\.[\s\S]*Includes a 1-month free trial\.[\s\S]*Your subscription begins only after the free trial ends\./);
 });
