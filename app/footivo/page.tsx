@@ -51,7 +51,7 @@ export default function WhyFootivoPage() {
 
         <div className="mt-10 space-y-12 text-slate-300">
           <section className="space-y-5">
-            <p className="text-base leading-7">The full Footivo app gives you everything you need to follow football in one place.</p>
+            <p className="text-base leading-7">The Footivo app gives you everything you need to follow football in one place.</p>
           </section>
 
           <section className="space-y-5">
@@ -74,7 +74,7 @@ export default function WhyFootivoPage() {
 
           <section className="space-y-5">
             <h2 className="text-2xl font-semibold text-white">Ready to explore Footivo?</h2>
-            <p className="text-base leading-7">Footivo is available through the App Store and Google Play.</p>
+            <p className="text-base leading-7">We’re working hard to bring Footivo to you through the App Store and Google Play.</p>
             <div className="flex flex-col gap-3 sm:flex-row"><StoreBadge eyebrow="Download on the" label="App Store" /><StoreBadge eyebrow="Get it on" label="Google Play" /></div>
           </section>
 
