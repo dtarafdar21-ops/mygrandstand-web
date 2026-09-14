@@ -35,6 +35,10 @@ export function SiteFooter({ returnTo = "/" }: { returnTo?: string }) {
           <Link href={getCorporateLegalHref("terms", returnTo)} className={footerLinkClass}>
             Terms of Use
           </Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/data-deletion" className={footerLinkClass}>
+            Data Deletion
+          </Link>
         </nav>
 
         <p className="mt-4 font-medium text-slate-300">
