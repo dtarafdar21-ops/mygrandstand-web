@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLockup } from "../components/BrandLockup";
+import { FootivoScreenshotCarousel } from "../components/FootivoScreenshotCarousel";
 import { SiteFooter } from "../components/SiteFooter";
 
 export default function Home() {
@@ -26,7 +27,11 @@ export default function Home() {
         </div>
       </section>
 
-          <SiteFooter returnTo="/" />
+      <section className="mx-auto w-full max-w-6xl px-6 pb-10 sm:px-8 sm:pb-12 lg:px-10">
+        <FootivoScreenshotCarousel variant="compact" />
+      </section>
+
+      <SiteFooter returnTo="/" />
     </main>
   );
 }

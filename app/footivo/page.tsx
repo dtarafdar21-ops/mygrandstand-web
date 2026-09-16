@@ -1,4 +1,5 @@
 import { BrandLockup } from "../../components/BrandLockup";
+import { FootivoScreenshotCarousel } from "../../components/FootivoScreenshotCarousel";
 import { SiteFooter } from "../../components/SiteFooter";
 
 const includedFeatures = [
@@ -63,6 +64,8 @@ export default function WhyFootivoPage() {
             <h2 className="text-2xl font-semibold text-white">Our Commitment</h2>
             <ul className="space-y-2 text-base leading-7">{commitments.map((commitment) => <li key={commitment}>{commitment}</li>)}</ul>
           </section>
+
+          <FootivoScreenshotCarousel />
 
           <section className="space-y-4 border-y border-slate-800 py-8">
             <h2 className="text-2xl font-semibold text-white">One simple price</h2>
