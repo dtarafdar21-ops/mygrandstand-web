@@ -44,9 +44,9 @@ export function FootivoScreenshotCarousel({ variant = "default" }: Props) {
       aria-label="Explore Footivo screenshots"
       className={`mt-12 overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/45 px-3 py-8 shadow-[0_20px_70px_rgba(2,6,23,0.28)] sm:px-6 sm:py-10 ${variant === "compact" ? "sm:py-8" : ""}`}
     >
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-2xl font-semibold text-white sm:text-3xl">Explore Footivo</h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
+      <div className="max-w-3xl text-left">
+        <h2 className="text-2xl font-semibold text-white">Explore Footivo</h2>
+        <p className="mt-2 max-w-2xl text-base leading-7 text-slate-300">
           See Match Centre, match details, Game Rooms, news, videos and quizzes in action.
         </p>
       </div>
