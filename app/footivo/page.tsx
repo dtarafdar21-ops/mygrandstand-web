@@ -66,8 +66,8 @@ export default function WhyFootivoPage() {
             <p className="text-base italic leading-7 text-slate-300">Your subscription begins only after the free trial ends.</p>
           </section>
 
-          <section className="space-y-5">
-            <h2 className="text-2xl font-semibold text-white">Ready to explore Footivo?</h2>
+          <section className="-mt-6 space-y-5">
+            <h2 className="text-2xl font-semibold text-white">Start FREE 1-month trial</h2>
             <p className="text-base leading-7">Download Footivo from your preferred app store.</p>
             <div className="flex flex-wrap items-center gap-3">
               <a href="https://play.google.com/store/apps/details?id=net.footivo.app" aria-label="Get it on Google Play" className="inline-flex rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">

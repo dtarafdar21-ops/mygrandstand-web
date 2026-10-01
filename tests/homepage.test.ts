@@ -72,6 +72,7 @@ test("Why Footivo page follows the approved Explore Footivo content", async () =
   assert.match(page, /No intrusive pop-ups/);
   assert.match(page, /Just football, clearly organised/);
   assert.match(page, /One simple price/);
+  assert.match(page, /Start FREE 1-month trial/);
   assert.match(page, /US\$ 0\.99 per year/);
   assert.match(page, /Local currency pricing may vary by country or region\./);
   assert.match(page, /Includes a 1-month free trial\./);
