@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { BrandLockup } from "../../components/BrandLockup";
 import { FootivoScreenshotCarousel } from "../../components/FootivoScreenshotCarousel";
 import { SiteFooter } from "../../components/SiteFooter";
@@ -22,17 +24,6 @@ const commitments = [
   "🚫 No intrusive pop-ups",
   "⚽ Just football, clearly organised",
 ];
-
-function StoreBadge({ label, eyebrow }: { label: string; eyebrow: string }) {
-  return (
-    <div role="img" aria-label={label} className="flex min-h-14 w-full items-center justify-center rounded-xl border border-slate-700 bg-slate-950 px-5 py-3 text-left shadow-sm sm:w-auto sm:min-w-52">
-      <span>
-        <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-slate-400">{eyebrow}</span>
-        <span className="mt-0.5 block text-base font-semibold text-white">{label}</span>
-      </span>
-    </div>
-  );
-}
 
 export const metadata = {
   title: "Why Footivo? | MyGrandStand",
@@ -77,8 +68,15 @@ export default function WhyFootivoPage() {
 
           <section className="space-y-5">
             <h2 className="text-2xl font-semibold text-white">Ready to explore Footivo?</h2>
-            <p className="text-base leading-7">We’re working hard to bring Footivo to you through the App Store and Google Play.</p>
-            <div className="flex flex-col gap-3 sm:flex-row"><StoreBadge eyebrow="Download on the" label="App Store" /><StoreBadge eyebrow="Get it on" label="Google Play" /></div>
+            <p className="text-base leading-7">Download Footivo from your preferred app store.</p>
+            <div className="flex flex-wrap items-center gap-3">
+              <a href="https://play.google.com/store/apps/details?id=net.footivo.app" aria-label="Get it on Google Play" className="inline-flex rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
+                <Image src="/footivo/store-badges/google-play-badge.png" alt="Get it on Google Play" width={153} height={59} className="h-[59px] w-auto" />
+              </a>
+              <a href="https://apps.apple.com/app/id6809765430" aria-label="Download on the App Store" className="inline-flex rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
+                <Image src="/footivo/store-badges/apple-app-store-badge.svg" alt="Download on the App Store" width={120} height={40} className="h-10 w-auto" />
+              </a>
+            </div>
           </section>
 
           <section className="space-y-5">

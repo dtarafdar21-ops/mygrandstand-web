@@ -76,10 +76,11 @@ test("Why Footivo page follows the approved Explore Footivo content", async () =
   assert.match(page, /Local currency pricing may vary by country or region\./);
   assert.match(page, /Includes a 1-month free trial\./);
   assert.match(page, /Your subscription begins only after the free trial ends\./);
-  assert.match(page, /label="App Store"/);
-  assert.match(page, /label="Google Play"/);
-  assert.doesNotMatch(page, /apps\.apple\.com|play\.google\.com|href="#"/);
-
+  assert.match(page, /Download Footivo from your preferred app store\./);
+  assert.match(page, /google-play-badge\.png/);
+  assert.match(page, /apple-app-store-badge\.svg/);
+  assert.match(page, /https:\/\/play\.google\.com\/store\/apps\/details\?id=net\.footivo\.app/);
+  assert.match(page, /https:\/\/apps\.apple\.com\/app\/id6809765430/);
   assert.match(page, /Thank you for exploring Footivo\./);
   assert.match(page, /Footivo exists to help football fans enjoy the game/);
   assert.match(page, /Because every fan deserves their own grandstand\./);
